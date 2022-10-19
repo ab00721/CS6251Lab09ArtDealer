@@ -59,8 +59,7 @@ function validateAndParseArtworkData(artwork) {
     }
     if(artwork.year == "") {
         artwork.year = "NaN"; 
-    }
-    if(artwork.year > 0) {
+    } else if(artwork.year > 0) {
         artwork.year = Number.parseInt(artwork.year);
     } else {
         return false; 
