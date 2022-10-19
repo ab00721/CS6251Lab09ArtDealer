@@ -27,6 +27,7 @@ function prepareSummary() {
     if (validateAndParseArtworkData(artwork)) {
         document.forms[0].summary.value = formatSummary(artwork);
     }
+    alert(formatSummary(artwork));
     return true;
 }
 
@@ -101,7 +102,7 @@ function validateAndParseArtworkData(artwork) {
  * @returns {string} the formatted string
  */
 function formatSummary(artwork) {
-    let summary = artwork.title.toUpperCase() + "<br>by " + artwork.artist.charAt(0).toUpperCase() + artwork.artist.slice(1);
+    let summary = artwork.title.toUpperCase() + "<br>by " + artwork.artist.charAt(0).toUpperCase() + artwork.artist.slice(1).toLowerCase();
     if (artwork.year != "NaN") {
         summary += "<br>Year: " + artwork.year;
     }
