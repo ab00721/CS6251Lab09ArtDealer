@@ -62,8 +62,7 @@ function validateAndParseArtworkData(artwork) {
     }
     if(artwork.year > 0) {
         artwork.year = Number.parseInt(artwork.year);
-    }
-    if(artwork.year <= 0) {
+    } else {
         return false; 
     }
     if(artwork.price > 0) {
